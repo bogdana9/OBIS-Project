@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <link rel="stylesheet" href="/page/style.css">
+  <link href="https://fonts.googleapis.com/css2?family=Raleway:wght@300&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Dosis&family=Rouge+Script&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+  <title>Obesity Prevalence Visualizer</title>
+
+</head>
+
+<body>
+<header>
+    <nav class="menu">
+        <a class="toggle" id="toggleButton">
+          <i class="fa fa-bars"></i>
+        </a>
+        <img class="logo" src="http://192.168.100.5:3001/images/Logo.png" alt="Obis Logo">
+        <ul class ="menuOptions" id="options">
+          <li> <a href="/page/home.html" class="links">Home</a></li>
+          <li><a href="/page/statistics.html" class="links">Statistics</a></li>
+          <li><a href="/page/about.html" class="links">About</a></li>
+        </ul>
+      </nav>
+</header>
+  
+<main class="content">
+  <article class="text">
+    <h2>General Facts</h2>
+    <p>Obis (Obesity Prevalence Visualizer) is a project designed to present different kinds of data regarding obesity based on user preference. 
+    <br><br>Due to many factors such as stress, fast-food, genetic predisposition or a sedentary lifestyle, more and more people suffer from obesity.
+    If you don’t feel convinced that this is a disease that affects more and more people, or if you want to see the “numbers”, we encourage you 
+    to visit the statistics, tailor the result so that they match your interests and make comparisons as you like.<br><br>
+    As life becomes bussier everyday, we tend to replace quality food and home-made meals with quick, poor ingredients pick-ups - 
+    an easy recipe for an imbalnced body. Make sure you keep yourself healthy and never underestimate how fast obesity can hit you.<br><br></p>
+    <p class="quote">"An apple a day keeps the doctor away"</p>
+   </article>
+  
+</main>
+ 
+<footer class="footerArrangement">
+
+  <div class="resources">
+    <p>Resources</p>
+    <a href="https://www.who.int/" target="_blank">World Health Organization<br></a>
+    <a href="https://www.cdc.gov/brfss/annual_data/annual_data.htm" target="_blank" > Centers For Disease Control and Prevention<br></a>
+  </div>
+
+  <div class="resources">
+    <p>Read more</p>
+      <a href="https://www.who.int/health-topics/obesity#tab=tab_1" target="_blank" >Obesity<br></a>
+      <a href="https://www.cdc.gov/healthyweight/assessing/bmi/adult_bmi/english_bmi_calculator/bmi_calculator" target="blank " > Calculate your BMI<br></a>
+  </div>
+  
+  <div class="resources">
+  <a href="http://www.uaic.ro/" target="_blank"> 
+    <img class="unilogo" src="http://192.168.100.5:3001/images/unilogo.png" alt="UAIC Logo">
+    
+  </a>
+    <p>@June 2020</p>
+  </div>
+
+</footer>
+
+
+
+<script>
+
+  let myMenu = document.getElementById('options');
+  let buttonMenu = document.getElementById('toggleButton');
+
+  buttonMenu.addEventListener('click', function () {
+      
+      myMenu.classList.toggle('display');
+  });
+  
+</script>
+
+</body>
+
+</html>

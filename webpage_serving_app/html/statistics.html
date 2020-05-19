@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html>
+<head>
+
+  <link rel="stylesheet" type="text/css" href="/page/css/styles.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+
+ <link href="https://fonts.googleapis.com/css2?family=Raleway:wght@300&display=swap" rel="stylesheet">
+
+</head>
+
+<body>
+
+  <nav class="menu">
+    <a class="toggle" id="toggleButton">
+      <i class="fa fa-bars"></i>
+    </a>
+    <ul class ="menuOptions" id="options">
+      <li> <a href="/page/home" class="links">Home</a></li>
+      <li><a href="/page/statistics" class="links">Statistics</a></li>
+      <li><a href="/page/about" class="links">About</a></li>
+    </ul>
+</nav>
+<p>stat</p>
+<footer>
+ </footer>
+<script>
+let myMenu = document.getElementById('options');
+let buttonMenu = document.getElementById('toggleButton');
+
+buttonMenu.addEventListener('click', function () {
+    
+    myMenu.classList.toggle('display');
+});
+</script>
+</body>
+</html>

@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+    
+    <head>
+      <meta charset="UTF-8">
+      <link rel="stylesheet" href="/page/style.css">
+      <link href="https://fonts.googleapis.com/css2?family=Raleway:wght@300&display=swap" rel="stylesheet">
+      <link href="https://fonts.googleapis.com/css2?family=Dosis&family=Rouge+Script&display=swap" rel="stylesheet">
+      <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+      <title>Obesity Prevalence Visualizer</title>
+    
+    </head>
+    
+    <body>
+    <header>
+        <nav class="menu">
+            <a class="toggle" id="toggleButton">
+              <i class="fa fa-bars"></i>
+            </a>
+            <img class="logo" src="http://192.168.100.5:3001/images/Logo.png" alt="Obis Logo">
+            <ul class ="menuOptions" id="options">
+              <li> <a href="/page/home.html" class="links">Home</a></li>
+              <li><a href="/page/statistics.html" class="links">Statistics</a></li>
+              <li><a href="/page/about.html" class="links">About</a></li>
+            </ul>
+          </nav>
+    </header>
+      
+    <main class="content">
+      <article class="text">
+        <h2>About me</h2>
+        <p class ="text">My name is Bogdana-Ioana Hincean and I am currently studying Computer Science at  Alexandru Ioan Cuza University, in Iasi, Romania.
+          I feel fascinated by all the “magic” you can do with few lines of code and in addition to computer science I have a huge passion for
+          growing plants. It's just incredible how a tiny seed can sprout into a beautiful plant... I hope this website helps you. Enjoy!
+        </p>
+
+       </article>
+      
+    </main>
+     
+    <footer class="footerArrangement">
+    
+      <div class="resources">
+        <p>Resources</p>
+        <a href="https://www.who.int/" target="_blank">World Health Organization<br></a>
+        <a href="https://www.cdc.gov/brfss/annual_data/annual_data.htm" target="_blank" > Centers For Disease Control and Prevention<br></a>
+      </div>
+    
+      <div class="resources">
+        <p>Read more</p>
+          <a href="https://www.who.int/health-topics/obesity#tab=tab_1" target="_blank" >Obesity<br></a>
+          <a href="https://www.cdc.gov/healthyweight/assessing/bmi/adult_bmi/english_bmi_calculator/bmi_calculator" target="blank " > Calculate your BMI<br></a>
+      </div>
+      
+      <div class="resources">
+      <a href="http://www.uaic.ro/" target="_blank"> 
+        <img class="unilogo" src="http://192.168.100.5:3001/images/unilogo.png" alt="UAIC Logo">
+        
+      </a>
+        <p>@June 2020</p>
+      </div>
+    
+    </footer>
+    
+    
+    
+    <script>
+    
+      let myMenu = document.getElementById('options');
+      let buttonMenu = document.getElementById('toggleButton');
+    
+      buttonMenu.addEventListener('click', function () {
+          
+          myMenu.classList.toggle('display');
+      });
+      
+    </script>
+    
+    </body>
+    
+    </html>
+    

@@ -1,0 +1,19 @@
+{
+  "name": "obis-project",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/bogdana9/OBIS-Project.git"
+  },
+  "author": "Hincean Bogdana-Ioana",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/bogdana9/OBIS-Project/issues"
+  },
+  "homepage": "https://github.com/bogdana9/OBIS-Project#readme"
+}
