@@ -15,5 +15,8 @@
   "bugs": {
     "url": "https://github.com/bogdana9/OBIS-Project/issues"
   },
-  "homepage": "https://github.com/bogdana9/OBIS-Project#readme"
+  "homepage": "https://github.com/bogdana9/OBIS-Project#readme",
+  "dependencies": {
+    "crypto-js": "^4.0.0"
+  }
 }

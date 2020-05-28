@@ -1,37 +1,79 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
+
 <head>
-
-  <link rel="stylesheet" type="text/css" href="/page/css/styles.css">
+  <meta charset="UTF-8">
+  <link rel="stylesheet" href="/style">
+  <link href="https://fonts.googleapis.com/css2?family=Raleway:wght@300&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Dosis&family=Rouge+Script&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
-
- <link href="https://fonts.googleapis.com/css2?family=Raleway:wght@300&display=swap" rel="stylesheet">
+  <title>Obesity Prevalence Visualizer</title>
 
 </head>
 
 <body>
+<header>
+    <nav class="menu">
+        <a class="toggle" id="toggleButton">
+          <i class="fa fa-bars"></i>
+        </a>
+        <img class="logo" src="/Logo.png" alt="Obis Logo">
+        <ul class ="menuOptions" id="options">
+          <li> <a href="/home" class="links">Home</a></li>
+          <li><a href="/statistics" class="links">Statistics</a></li>
+          <li><a href="/about" class="links">About</a></li>
+        </ul>
+      </nav>
+</header>
+  
+<main class="content">
+  <article class="text">
+    <h2>General Facts</h2>
+    <p>Obis (Obesity Prevalence Visualizer) is a project designed to present different kinds of data regarding obesity based on user preference. 
+    <br><br>Due to many factors such as stress, fast-food, genetic predisposition or a sedentary lifestyle, more an</p>
+   
+   </article>
+  
+</main>
+ 
+<footer class="footerArrangement">
 
-  <nav class="menu">
-    <a class="toggle" id="toggleButton">
-      <i class="fa fa-bars"></i>
-    </a>
-    <ul class ="menuOptions" id="options">
-      <li> <a href="/page/home" class="links">Home</a></li>
-      <li><a href="/page/statistics" class="links">Statistics</a></li>
-      <li><a href="/page/about" class="links">About</a></li>
-    </ul>
-</nav>
-<p>stat</p>
-<footer>
- </footer>
-<script>
-let myMenu = document.getElementById('options');
-let buttonMenu = document.getElementById('toggleButton');
+  <div class="resources">
+    <p>Resources</p>
+    <a href="https://www.who.int/" target="_blank">World Health Organization<br></a>
+    <a href="https://www.cdc.gov/brfss/annual_data/annual_data.htm" target="_blank" > Centers For Disease Control and Prevention<br></a>
+  </div>
 
-buttonMenu.addEventListener('click', function () {
+  <div class="resources">
+    <p>Read more</p>
+      <a href="https://www.who.int/health-topics/obesity#tab=tab_1" target="_blank" >Obesity<br></a>
+      <a href="https://www.cdc.gov/healthyweight/assessing/bmi/adult_bmi/english_bmi_calculator/bmi_calculator" target="blank " > Calculate your BMI<br></a>
+  </div>
+  
+  <div class="resources">
+  <a href="http://www.uaic.ro/" target="_blank"> 
+    <img class="unilogo" src="/unilogo.png" alt="UAIC Logo">
     
-    myMenu.classList.toggle('display');
-});
+  </a>
+    <p>@June 2020</p>
+  </div>
+
+</footer>
+
+
+
+<script>
+
+  let myMenu = document.getElementById('options');
+  let buttonMenu = document.getElementById('toggleButton');
+
+  buttonMenu.addEventListener('click', function () {
+      
+      myMenu.classList.toggle('display');
+  });
+  
 </script>
+
 </body>
+
 </html>

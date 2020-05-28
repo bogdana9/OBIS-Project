@@ -1,27 +1,32 @@
 const http = require('http');
 const url = require('url');
+const fs = require('fs');
+const tokenManager = require('../tokenManager.js');
+
 
 module.exports = http.createServer((req, res) => {
 
     var service = require('./service.js');
-    var path = url.parse(req.url).pathname;
-    const types = {"css":"text/css", "html":"text/html", "png": "image/png"}
-    var extension = getExtention(path);
-    
-    if (extension in types){
-        service.pageRequest(req, res, types[extension]);
+    var token = extarctToken(req.url);  
+    var a = new tokenManager('UQG32dE0n0MI3rWRavag');
+
+    if(a.checkToken(token) == true){
+       service.pageRequest(req, res);
     }
     else{
-        service.invalideType(res);
+        res.writeHead(403, {'Content-Type':'text/html'});
+        res.write('');
+        res.end();
     }
-        
+       
     
     
 });
 
 
-function getExtention(filePath){
-    regex = new RegExp('[^.]+$');
-    extension = filePath.match(regex);
-    return extension;    
+function extarctToken(url_sting){
+    var path = url.parse(url_sting).pathname;
+    var endToken = path.lastIndexOf('/') - 1;
+    var token = path.substr(1, endToken);
+    return token
 }
