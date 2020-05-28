@@ -1,0 +1,118 @@
+
+  <!DOCTYPE html>
+  <html lang="en">
+  
+  <head>
+    <meta charset="UTF-8">
+    <link rel="stylesheet" href="/style">
+    <link href="https://fonts.googleapis.com/css2?family=Raleway:wght@300&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Dosis&family=Rouge+Script&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <title>Obesity Prevalence Visualizer</title>
+  
+  </head>
+  
+  <body>
+  <header>
+      <nav class="menu">
+          <a class="toggle" id="toggleButton">
+            <i class="fa fa-bars"></i>
+          </a>
+          <img class="logo" src="/Logo.png" alt="Obis Logo">
+          <ul class ="menuOptions" id="options">
+            <li> <a href="/home" class="links">Home</a></li>
+            <li><a href="/statistics" class="links">Statistics</a></li>
+            <li><a href="/about" class="links">About</a></li>
+            <li id="login"><a href="/login" class="links">Login</a></li>
+            <li id="logout"><a href="/logout" class="links">Logout</a></li>
+            <li id="register"><a href="/register" class="links">Register</a></li>
+          </ul>
+        </nav>
+  </header>
+    
+  <main class="content" >
+    <form class = "text" action="home.html" >
+      <article>
+        <h2>Welcome</h2>
+        <div>
+           <div class="i textForm">
+                <i class="fa fa-user "></i>
+           </div>
+           <div>
+                <p>Username</p>
+                <input class="textForm" type="text" placeholder="Enter Username" name="username" required>
+           </div>
+        </div>
+        
+        <div>
+          <div class="i"> 
+              <i class="fa fa-lock"></i>
+          </div>
+          <div>
+              <p>Password</p>
+              <input class="textForm" type="password" placeholder="Enter Password" name="username" required>
+            </div>
+        </div>
+
+      <div class="forgot textForm"> 
+          <a href="#">Forgot Password?</a>
+      </div>
+      <br>
+      <input type="submit" class="btn textForm" value="Login">
+      </form>
+
+      </article>
+        
+    
+  </main>
+   
+  <footer class="footerArrangement">
+  
+    <div class="resources">
+      <p>Resources</p>
+      <a href="https://www.who.int/" target="_blank">World Health Organization<br></a>
+      <a href="https://www.cdc.gov/brfss/annual_data/annual_data.htm" target="_blank" > Centers For Disease Control and Prevention<br></a>
+    </div>
+  
+    <div class="resources">
+      <p>Read more</p>
+        <a href="https://www.who.int/health-topics/obesity#tab=tab_1" target="_blank" >Obesity<br></a>
+        <a href="https://www.cdc.gov/healthyweight/assessing/bmi/adult_bmi/english_bmi_calculator/bmi_calculator" target="blank " > Calculate your BMI<br></a>
+    </div>
+    
+    <div class="resources">
+    <a href="http://www.uaic.ro/" target="_blank"> 
+      <img class="unilogo" src="/unilogo.png" alt="UAIC Logo">
+      
+    </a>
+      <p>@June 2020</p>
+    </div>
+  
+  </footer>
+  
+  
+  
+  <script>
+  
+    let myMenu = document.getElementById('options');
+    let buttonMenu = document.getElementById('toggleButton');
+  
+    buttonMenu.addEventListener('click', function () {
+        
+        myMenu.classList.toggle('display');
+    });
+    if(localStorage.getItem('token') == null){
+      let logout = document.getElementById('logout');
+      logout.style.display = 'none';
+    }else{
+      let login = document.getElementById('login');
+      let register = document.getElementById('register');
+      login.style.display = 'none';
+      register.style.display = 'none';
+    }
+  </script>
+  
+  </body>
+  
+  </html>
+  

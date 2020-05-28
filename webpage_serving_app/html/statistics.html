@@ -22,6 +22,9 @@
           <li> <a href="/home" class="links">Home</a></li>
           <li><a href="/statistics" class="links">Statistics</a></li>
           <li><a href="/about" class="links">About</a></li>
+          <li id="login"><a href="/login" class="links">Login</a></li>
+          <li id="logout"><a href="/logout" class="links">Logout</a></li>
+          <li id="register"><a href="/register" class="links">Register</a></li>
         </ul>
       </nav>
 </header>
@@ -71,7 +74,15 @@
       
       myMenu.classList.toggle('display');
   });
-  
+  if(localStorage.getItem('token') == null){
+      let logout = document.getElementById('logout');
+      logout.style.display = 'none';
+    }else{
+      let login = document.getElementById('login');
+      let register = document.getElementById('register');
+      login.style.display = 'none';
+      register.style.display = 'none';
+    }
 </script>
 
 </body>

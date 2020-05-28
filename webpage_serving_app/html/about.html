@@ -22,6 +22,9 @@
               <li> <a href="/home" class="links">Home</a></li>
               <li><a href="/statistics" class="links">Statistics</a></li>
               <li><a href="/about" class="links">About</a></li>
+              <li id="login"><a href="/login" class="links">Login</a></li>
+              <li id="logout"><a href="/logout" class="links">Logout</a></li>
+              <li id="register"><a href="/register" class="links">Register</a></li>
             </ul>
           </nav>
     </header>
@@ -29,10 +32,14 @@
     <main class="content">
       <article class="text">
         <h2>About me</h2>
-        <p class ="text">My name is Bogdana-Ioana Hincean and I am currently studying Computer Science at  Alexandru Ioan Cuza University, in Iasi, Romania.
+        <br>
+        <div class="myPicture"><img src="poza.png" alt="Avatar">
+        <br>
+        <p>My name is Bogdana-Ioana Hincean and I am currently studying Computer Science at  Alexandru Ioan Cuza University, in Iasi, Romania.
           I feel fascinated by all the “magic” you can do with few lines of code and in addition to computer science I have a huge passion for
           growing plants. It's just incredible how a tiny seed can sprout into a beautiful plant... I hope this website helps you. Enjoy!
         </p>
+        </div>
 
        </article>
       
@@ -73,7 +80,15 @@
           
           myMenu.classList.toggle('display');
       });
-      
+      if(localStorage.getItem('token') == null){
+      let logout = document.getElementById('logout');
+      logout.style.display = 'none';
+    }else{
+      let login = document.getElementById('login');
+      let register = document.getElementById('register');
+      login.style.display = 'none';
+      register.style.display = 'none';
+    }
     </script>
     
     </body>

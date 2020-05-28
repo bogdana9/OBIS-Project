@@ -68,9 +68,9 @@
 
 .text{
     width: 80%;
+    
     align-content: center;
 }
-
 /*footer*/
 
 html, body {
@@ -123,6 +123,30 @@ body {
     list-style-type: none;
     text-decoration: none;
     font-size: xx-large;
+}
+
+/* login */
+.textForm{
+    font-size: xx-large;
+    width: 100%;
+}
+.forgot a{
+    color: #000000;
+    font-family: 'Raleway', sans-serif;
+    list-style-type: none;
+    text-decoration: none;
+    font-size: x-large;
+}
+
+/*about */
+.myPicture{
+    display: flex;
+    flex-direction: column;
+}
+
+.myPicture img{
+    border-radius: 50%;
+    width: 30%;
 }
 
 @media screen and (min-width: 1000px) {
@@ -191,6 +215,22 @@ body {
     .resources p{
         font-size: large;
     }
-    
+    /*login*/ 
+    .textForm{
+        font-size: x-large;
+    }
+    .forgot a{
+        font-size: large;
+    }   
+    /* about */
+    .myPicture{
+        flex-direction: row;
+    }
+
+    .myPicture img{
+        border-radius: 50%;
+        width:10%;
+        margin-right: 50px;
+    }
 }
 

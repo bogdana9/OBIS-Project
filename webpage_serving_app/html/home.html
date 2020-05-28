@@ -22,6 +22,9 @@
           <li> <a href="/home" class="links">Home</a></li>
           <li><a href="/statistics" class="links">Statistics</a></li>
           <li><a href="/about" class="links">About</a></li>
+          <li id="login"><a href="/login" class="links">Login</a></li>
+          <li id="logout"><a href="/logout" class="links">Logout</a></li>
+          <li id="register"><a href="/register" class="links">Register</a></li>
         </ul>
       </nav>
 </header>
@@ -29,6 +32,7 @@
 <main class="content">
   <article class="text">
     <h2>General Facts</h2>
+    <br>
     <p>Obis (Obesity Prevalence Visualizer) is a project designed to present different kinds of data regarding obesity based on user preference. 
     <br><br>Due to many factors such as stress, fast-food, genetic predisposition or a sedentary lifestyle, more and more people suffer from obesity.
     If you don't feel convinced that this is a disease that affects more and more people, or if you want to see the "numbers", we encourage you 
@@ -75,7 +79,15 @@
       
       myMenu.classList.toggle('display');
   });
-  
+  if(localStorage.getItem('token') == null){
+      let logout = document.getElementById('logout');
+      logout.style.display = 'none';
+    }else{
+      let login = document.getElementById('login');
+      let register = document.getElementById('register');
+      login.style.display = 'none';
+      register.style.display = 'none';
+    }
 </script>
 
 </body>
