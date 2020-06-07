@@ -1,0 +1,11 @@
+{
+  "name": "gate",
+  "version": "1.0.0",
+  "description": "it's the gate between user and webapp",
+  "main": "server.js",
+  "scripts": {
+    "test": "node server.js"
+  },
+  "author": "Bogdana-Ioana Hincean",
+  "license": "ISC"
+}

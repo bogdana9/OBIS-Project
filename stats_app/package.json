@@ -1,0 +1,11 @@
+{
+  "name": "stats",
+  "version": "1.0.0",
+  "description": "it's an API for geting stats about overweight, obese population in US",
+  "main": "server.js",
+  "scripts": {
+    "test": "node server.js"
+  },
+  "author": "Bogdana-Ioana Hincean",
+  "license": "ISC"
+}
