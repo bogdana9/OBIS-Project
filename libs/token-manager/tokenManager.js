@@ -1,11 +1,11 @@
-const Base64 = require('../crypto-js/enc-base64');
-const Utf8 = require('../crypto-js/enc-utf8');
+const Base64 = require('../../node_modules/crypto-js/enc-base64');
+const Utf8 = require('../../node_modules/crypto-js/enc-utf8');
 
 
 class tokenManager{
     constructor(secret, cryptFuncName='hmac-sha512') {
         this.secret = secret;
-        this.cryptFunc  =  require('../crypto-js/' + cryptFuncName);
+        this.cryptFunc  =  require('../../node_modules/crypto-js/' + cryptFuncName);
     }
 
 
@@ -76,8 +76,10 @@ class tokenManager{
             return false;
         }
     }
+
+
     cryptMsg(msg){
-        return this.cryptFunc(msg, this.secret);
+        return String(this.cryptFunc(msg, this.secret));;
 
     }
 }
