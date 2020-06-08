@@ -1,0 +1,82 @@
+<div class="adminPanel">
+  <div class="adminSection">
+    <div class="adminTitles">
+      <h2 >API control panel</h2>
+    </div>
+    <div class="onOffPanel">
+      <div class="onOffButton">
+        <p>Auth app</p><br>
+        <div class="toggleBtn"
+        onclick="onOff('auth_app');" id="auth_app">
+        <div class="innerCircle"></div>
+        </div>
+      </div>
+      <div class="onOffButton">
+        <p>Stats app</p><br>
+        <div class="toggleBtn"
+        onclick="onOff('stats_app');" id="stats_app">
+        <div class="innerCircle"></div>
+        </div>
+      </div>
+      <div class="onOffButton">
+        <p >Web Page Serving app</p><br>
+        <div class="toggleBtn"
+        onclick="onOff('webpage_serving_app');" id="webpage_serving_app">
+        <div class="innerCircle"></div>
+        </div>
+      </div>
+
+    </div>
+  </div>
+  <div  class="adminSection">
+    <div class="adminTitles">
+    <h2>Add Admin</h2>
+    </div>
+    <div>
+      <div>
+         <div class="i textForm">
+              <i class="fa fa-user "></i>
+         </div>
+         <div>
+              <p>Username</p>
+              <input class="textForm" type="text" placeholder="Enter Username" id="username" name="username" required>
+         </div>
+      </div>
+
+      <div>
+        <div class="i">
+              <i class="fa fa-lock"></i>
+        </div>
+        <div>
+              <p>Email</p>
+              <input class="textForm" type="text" placeholder="Enter Email" name="email" id="email" required>
+        </div>
+        <div>
+              <br>
+              <p>Password</p>
+              <input minlength="8" autocomplete="new-password" class="textForm"  type="password" placeholder="Enter Password" name="password" id="password" required>
+        </div>
+
+        <div>
+              <br>
+              <p>Please confirm your password</p>
+              <input minlength="8" class="textForm" autocomplete="new-password" type="password" placeholder="Re-enter Password" name="confrpassword" id="confrpassword" required>
+        </div>
+      </div>
+
+      <br>
+      <input type="submit" class="btn textForm"  value="create" onclick="adminRegister();">
+
+    </div>
+  </div>
+  <div  class="adminSection">
+    <div class="adminTitles">
+    <h2 >Database operation</h2>
+    </div>
+    <div class="onOffButton">
+      <input type="submit" class="btn btnUpdate" value="Update DB" onclick="login();">
+    </div>
+
+  </div>
+
+</div>

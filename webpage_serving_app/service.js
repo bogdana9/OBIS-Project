@@ -2,7 +2,7 @@ const url = require('url');
 const fs = require('fs');
 const path = require('path');
 
-const types = {".css":"text/css", ".html":"text/html", ".png": "image/png", ".ico": "image/png",  ".jpg": "image/jpg", ".js": "text/javascript"}
+const types = {".css":"text/css", ".txt":"text/plain", ".html":"text/html", ".png": "image/png", ".ico": "image/png",  ".jpg": "image/jpg", ".js": "text/javascript"}
 
 
 function pageRequest(req, res) {
@@ -16,13 +16,14 @@ function pageRequest(req, res) {
                      res.write('');
                      res.end();
                   } else {
-                     res.writeHead(200, {'Content-Type':types[path.extname(file_path)]});
+                        console.log(file_path)
+                        res.writeHead(200, {'Content-Type':types[path.extname(file_path)]});
                         res.write(data);
                         res.end();
                      }
          });
    }else{
-      res.writeHead(404, {'Content-Type':'text/html'});
+      res.writeHead(403, {'Content-Type':'text/html'});
       res.write('');
       res.end();
    }
@@ -56,11 +57,18 @@ function searchFile(dir, filename){
 
 
 function extarctFileName(url_sting){
-   var path = url.parse(url_sting).pathname;
-   var fileStart = path.lastIndexOf('/') + 1;
-   var filename = path.substr(fileStart);
-   return filename
+  var path = url.parse(url_sting).pathname.split('/');
+  var filename = path[2];
+  return filename
 }
 
 
+function error(res, errorCode){
+    res.writeHead(errorCode, {'Content-Type':'text/html'});
+    res.write('');
+    res.end();
+  }
+
+
+exports.error = error;
 exports.pageRequest = pageRequest;

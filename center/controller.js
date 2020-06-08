@@ -11,7 +11,7 @@ const options = {
 server = https.createServer(options, function (req, res) {
   var service = require('./service.js');
   var urlPath = req.url;
-  var validations = [validAuthentification, validLocation, validSecureContent]
+  var validations = [validAuthentification, validLocation, validSecureContent, validAdminContent]
   var reqSolved = false;
 
   for (i = 0; i < validations.length; i++){
@@ -50,15 +50,14 @@ function validSecureContent(res, req, urlPath, service){
     var options = {
       host: req.host,
       port: 3001,
-      path: urlPath + 'locked',
-      method: 'GET',
+      path: '/' + url.parse(urlPath).pathname.split('/')[1] + 'locked',
+      method: 'POST',
       rejectUnauthorized: false,
       requestCert: true,
       agent: false
     };
-    var validPaths = ['/statistics', '/admin']
+    var validPaths = ['/statistics']
     validPaths = validPaths.map(x => urlPath.startsWith(x))
-
     if ((validPaths.includes(true) == true) && service.checkToken(req) && req.method === 'POST'){
         service.request(options, res);
         return true;
@@ -67,8 +66,63 @@ function validSecureContent(res, req, urlPath, service){
 }
 
 
+function validAdminContent(res, req, urlPath, service){
+    var options = {
+      host: req.host,
+      port: 3001,
+      path: '/' + url.parse(urlPath).pathname.split('/')[1] + 'locked',
+      method: 'POST',
+      rejectUnauthorized: false,
+      requestCert: true,
+      agent: false
+    };
+    var apisPorts = {
+      "webpage_serving_app": 3001,
+      "auth_app": 3002
+    }
+    var validPaths = ['/admin', '/adminRegister']
+    validPaths = validPaths.map(x => urlPath.startsWith(x))
+    var validUrl = new URL('https://example.org/'+req.url);
+    var api = validUrl.searchParams.get('api');
+    if ((validPaths.includes(true) == true) && service.checkAdminToken(req) && req.method === 'POST'){
+      var state = validUrl.searchParams.get('state');
+      var username = validUrl.searchParams.get('username');
+      if(username != null){
+        options.port = 3002;
+        options.path = urlPath;
+      }
+      if (state == "off"){
+        service.endAPI(apisPorts[api]);
+        return true;
+      }
+      if (state == "on"){
+        service.startAPI(api);
+        return true;
+      }
+      service.request(options, res);
+      return true;
+    }
+    return false;
+}
+
+
 function validAuthentification(res, req, urlPath, service){
-  return false;
+  var options = {
+    host: req.host,
+    port: 3002,
+    path: urlPath,
+    method: 'POST',
+    rejectUnauthorized: false,
+    requestCert: true,
+    agent: false
+  };
+  var validPaths = ['/login', '/register']
+     validPaths = validPaths.map(x => urlPath.startsWith(x))
+     if ((validPaths.includes(true) == true ) && req.method === 'POST'){
+         service.request(options, res);
+         return true;
+     }
+     return false;
 }
 
 

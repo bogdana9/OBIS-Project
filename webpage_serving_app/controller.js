@@ -18,9 +18,7 @@ server = https.createServer(options, function (req, res) {
         service.pageRequest(req, res);
     }
     else{
-        res.writeHead(403, {'Content-Type':'text/html'});
-        res.write('');
-        res.end();
+        service.error(res, 403);
     }
 });
 
