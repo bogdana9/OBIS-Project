@@ -6,16 +6,19 @@ const tokenManager = require('../libs/token-manager/tokenManager.js');
 
 var tokens = {
     3001 : 'eyJhbGciOiJzaGE1MTIiLCJ0eXBlIjoiSldUIn0.eyJwb3J0IjozMDAwLCJuYW1lIjoiZ2F0ZWtlZXBlciJ9.c5YxHn2RJ7zHosC9D6fPr-ohdZ72mrRxYiaIjHsDrb59vpsNTKB7rcgTLCu52sF9Og_qntbkv_1oiIAcz09LPQ',
-    3002:  'eyJhbGciOiJzaGE1MTIiLCJ0eXBlIjoiSldUIn0.eyJwb3J0IjozMDAwLCJuYW1lIjoiZ2F0ZWtlZXBlciJ9.HGLdTLmmq4_YLdElDyHzZeqxCzEbvirJBxXYgaZdiMTZ8mj-Ng4_lj1RsFtJV9LmHkelbeXp0wuDCK_b0_1gWQ'
+    3002:  'eyJhbGciOiJzaGE1MTIiLCJ0eXBlIjoiSldUIn0.eyJwb3J0IjozMDAwLCJuYW1lIjoiZ2F0ZWtlZXBlciJ9.HGLdTLmmq4_YLdElDyHzZeqxCzEbvirJBxXYgaZdiMTZ8mj-Ng4_lj1RsFtJV9LmHkelbeXp0wuDCK_b0_1gWQ',
+    3003: 'eyJhbGciOiJzaGE1MTIiLCJ0eXBlIjoiSldUIn0.eyJwb3J0IjozMDAwLCJuYW1lIjoiZ2F0ZWtlZXBlciJ9.JjELTSisyHai2mpHCBz3hcv9Xdo1JxXvU7qAKJiYg8t66JnFT7CD97rpuv0uzpOqWs_fEl_l5ZwuSjZf2bxN8Q'
 }
 var apisPorts = {
     "webpage_serving_app": 3001,
-    "auth_app": 3002
+    "auth_app": 3002,
+    "stats_app": 3003
 }
 
 var apis = {
     3001 : true,
-    3002:  true
+    3002:  true,
+    3003:  true
 }
 
 function request(req, res) {
@@ -58,7 +61,7 @@ function endAPI(port){
 }
 
 function startAllAPI(){
-    apisNames = ['webpage_serving_app', 'auth_app']
+    apisNames = ['webpage_serving_app', 'auth_app', 'stats_app']
     for (i = 0; i < apisNames.length; i++){
       startAPI(apisNames[i]);
     }

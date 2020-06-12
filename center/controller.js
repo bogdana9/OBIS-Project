@@ -11,7 +11,7 @@ const options = {
 server = https.createServer(options, function (req, res) {
   var service = require('./service.js');
   var urlPath = req.url;
-  var validations = [validAuthentification, validLocation, validSecureContent, validAdminContent]
+  var validations = [validAuthentification, validLocation, validSecureContent, validAdminContent, validAdminUpdate]
   var reqSolved = false;
 
   for (i = 0; i < validations.length; i++){
@@ -35,8 +35,8 @@ function validLocation(res, req, urlPath, service){
         requestCert: true,
         agent: false
     };
-    var validPaths = ['/login', '/register', '/statistics', '/logout', '/home', '/about', '/admin', '/style', '/client', '/authClient']
-    validPaths = validPaths.map(x => urlPath.startsWith(x))
+    var validPaths = ['/login', '/register', '/statistics', '/logout', '/home', '/about', '/admin', '/style', '/client', '/authClient', '/adminClient']
+    validPaths = validPaths.map(x => urlPath == x)
 
     if ((validPaths.includes(true) == true) && req.method === 'GET'){
         service.request(options, res);
@@ -78,7 +78,8 @@ function validAdminContent(res, req, urlPath, service){
     };
     var apisPorts = {
       "webpage_serving_app": 3001,
-      "auth_app": 3002
+      "auth_app": 3002,
+      "stats_app": 3003
     }
     var validPaths = ['/admin', '/adminRegister']
     validPaths = validPaths.map(x => urlPath.startsWith(x))
@@ -124,6 +125,33 @@ function validAuthentification(res, req, urlPath, service){
      }
      return false;
 }
+
+
+
+
+function validAdminUpdate(res, req, urlPath, service){
+    var options = {
+      host: req.host,
+      port: 3003,
+      path: urlPath,
+      method: 'GET',
+      rejectUnauthorized: false,
+      requestCert: true,
+      agent: false
+    };
+    var validPaths = ['/update', '/stats']
+    validPaths = validPaths.map(x => urlPath.startsWith(x))
+    if ((validPaths.includes(true) == true) && service.checkAdminToken(req) && req.method === 'POST'){
+      service.request(options, res);
+      return true;
+    }
+    if ((validPaths.includes(true) == true) && service.checkToken(req)){
+      service.request(options, res);
+      return true;
+    }
+    return false;
+}
+
 
 
 module.exports = server;

@@ -1,1 +1,44 @@
-<p>mesaj</p>
+<div class="statsPanale">
+  <div class="ControlPanle">
+
+  <div class="range-wrap"><br>
+    <div  id="chartListDisplay"><p>Pie</p></div><br>
+    <input class="range" id="chartList" type="range" min="0" max="2" value="0" step="1">
+  </div>
+    <div class="range-wrap"><br>
+      <div  id="statesListDisplay"><p>Alabama - AL</p></div><br>
+      <input class="range" id="statesList" type="range" min="0" max="59" value="0" step="1">
+    </div>
+    <div class="range-wrap"><br>
+      <div  id="yearStartDisplay"><p>Start year: 2011</p></div><br>
+      <input class="range" id="yearStart" type="range" min="2011" max="2018" value="2011" step="1">
+    </div>
+    <div class="range-wrap"><br>
+      <div  id="yearEndDisplay"><p>End year: 2011</p></div><br>
+      <input class="range" id="yearEnd" type="range" min="2011" max="2018" value="2011" step="1">
+    </div>
+
+    <div ><br>
+      <p>Male</p><br>
+      <div class="toggleBtn"
+      onclick="onOff2('male');" id="male">
+      <div class="innerCircle"></div>
+      </div>
+    </div>
+    <div ><br>
+      <p>Female</p><br>
+      <div class="toggleBtn"
+      onclick="onOff2('female');" id="female">
+      <div class="innerCircle"></div>
+      </div>
+    </div>
+    <div>
+      <input type="submit" class="btn btnUpdat" value="calculate" onclick="calculate();">
+    </div>
+
+
+  </div>
+  <div id="statsDisplay">
+
+  </div>
+</div>

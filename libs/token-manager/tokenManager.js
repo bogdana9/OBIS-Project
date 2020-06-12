@@ -24,7 +24,6 @@ class tokenManager{
         var base64_safe_string = base64_string.replace(/=+$/, '');
         base64_safe_string = base64_safe_string.replace(/\+/g, '-');
         base64_safe_string = base64_safe_string.replace(/\//g, '_');
-
         return base64_safe_string;
     }
 
@@ -99,10 +98,10 @@ KssN6P7f8pG5gxDZk8ek
 7r2ili4AApSJcjLaAWUo
 9LWBcaCXB6jdYxw6WHh8
 K0rEWQaSyT2SnXdp0TqT
-HOnDzfk8EEJBkqgZwsy8
 
 var a = new tokenManager('');
 header = { alg: 'sha512', type: 'JWT' }
 body = { port: 3000, name: 'gatekeeper' }
+body = { username: ana, password: 'gatekeeper' }
 console.log(a.createSignedToken(header,body)
 */

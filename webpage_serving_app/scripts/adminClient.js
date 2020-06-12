@@ -62,3 +62,21 @@ function adminRegister() {
       }
 
 }
+
+
+function update(){
+  xhr = new XMLHttpRequest();
+  xhr.open('POST','update/?token=' + localStorage.getItem('token'));
+  xhr.setRequestHeader('Content-Type', 'application/x-www-form-urlencoded');
+  xhr.onload = function() {
+      console.log(xhr.status);
+      if (xhr.status === 200){
+          alert("updated.")
+      }
+      if (xhr.status !== 200) {
+
+          alert("db problems.")
+      }
+  }
+  xhr.send(encodeURI(''));
+}
